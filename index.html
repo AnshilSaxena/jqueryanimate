@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="js\myjQuery.js"> -->
+</head>
+
+<body>
+    <p class='odd'>this is my body1</p>
+    <p id='second'>this is my body2</p>
+    <p class='odd'>this is my body3</p>
+    <p>this is my body4</p>
+    <button id='but'>Toggle now</button></br>
+</br>
+    <h1>If you click on the "Hide" button, I will disappear.</h1>
+    <button id="hide">Hide</button>
+<button id="show">Show</button>
+   
+</br>
+    <div id='wiki'>
+
+
+        The first person born in British America to be ordained a Catholic priest.
+        Originally from the colonial Province of Maryland, he became influential in the establishment of Catholicism in
+        Washington, D.C. through his parochial service and founding of several educational institutions. He was the
+        second pastor of St. Patrick's Church, the President of Georgetown College (later known as Georgetown
+        University), and the head of the Washington Catholic Seminary, which became Gonzaga College High School, in
+        addition to being co-founder and president of the Washington Library Company, the first public library in the
+        District of Columbia. He founded several orphanages, schools, and parishes, and was co-director of the District
+        of Columbia Public Schools. In 1832 he officiated at the wedding of a French diplomat and Mary Anne Lewis, a
+        ward of President Andrew Jackson, in the first Catholic ceremony to be held in the White House.
+    </div>
+</br></br>
+    <form>
+        <input id='inp' type="text">
+    </br></br>
+        <textarea id='ta'> this is your value my text area</textarea>
+
+    </form>
+</br></br>
+    <div id='ani' style="background-color: red;">
+
+
+        The first person born in British America to be ordained a Catholic priest.
+        Originally from the colonial Province of Maryland, he became influential in the establishment of Catholicism in
+        Washington, D.C. through his parochial service and founding of several educational institutions. He was the
+        second pastor of St. Patrick's Church, the President of Georgetown College (later known as Georgetown
+        University), and the head of the Washington Catholic Seminary, which became Gonzaga College High School, in
+        addition to being co-founder and president of the Washington Library Company, the first public library in the
+        District of Columbia. He founded several orphanages, schools, and parishes, and was co-director of the District
+        of Columbia Public Schools. In 1832 he officiated at the wedding of a French diplomat and Mary Anne Lewis, a
+        ward of President Andrew Jackson, in the first Catholic ceremony to be held in the White House.
+    </div>
+</br></br>
+</body>
+
+<!-- <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/myjQuery.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // $('p').click(function () {
+        // console.log('you clicked on p', this)};
+        alert("Hello! I am an alert box!");
+         
+    $('p').on(
+        {
+            click: function () {
+                console.log('Thanks for clicking', this);
+            },
+            mouseleave: function () {
+                console.log("mouseleave");
+
+            }
+
+        });
+        $('#wiki').slideUp(2000, function(){
+        console.log('done');
+        });
+
+        $('#ani').animate({
+        opacity:0.3,
+        height: '150px',
+        width:'400px'
+
+    }, "fast");
+    // $('#ani').animate({ opacity: 0.3 }, 4000);
+    // $('#wiki').animate({ opacity: 0.9 }, 1000);
+    // $('#wiki').animate({ width: '350px' }, 12000);
+
+    $('#but').click(function () {
+        $('#wiki').fadeOut(5000);
+    });
+
+    $("#hide").click(function(){
+    $("h1").hide();
+  });
+  $("#show").click(function(){
+    $("h1").show();
+  });
+
+    });
+
+</script>
+
+</html>
